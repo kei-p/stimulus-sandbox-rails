@@ -1,0 +1,13 @@
+%div{ data: { controller: 'nested-form' } }
+  %h5{ data: { target: 'nested-form.title' } }
+  %div
+    %h6
+      total:
+      %span{ data: { target: 'nested-form.total' } }
+  %div
+    .hide{ data: { target: 'nested-form.template' } }
+      %li{ data: { target: 'nested-form.item' } }
+        %input{ type: 'number', value: 0, name: 'items[][number]', data: { action: 'change->nested-form#render' } }
+        %button{ data: { action: 'click->nested-form#remove' } } Remove
+    %ul{ data: { target: 'nested-form.itemContainer' } }
+    %button{ data: { action: 'nested-form#add' } } Add
